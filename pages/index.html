@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="no"> <!-- Angir at dokumentet er på norsk -->
+<head>
+    <meta charset="UTF-8"> <!-- Setter tegnsettet til UTF-8 -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Gjør siden responsiv -->
+    <title>Dream | bruktbilforhandler</title> <!-- Tittelen som vises i nettleserfanen -->
+    <link rel="stylesheet" href="/styles.css"> <!-- Kobler til en ekstern CSS-fil -->
+</head>
+<body>
+    <!-- Seksjon for video -->
+    <div class="video-container">
+        <video autoplay loop muted playsinline> <!-- Video som spilles av automatisk uten lyd -->
+            <source src="https://videos.pexels.com/video-files/31950974/13612916_2560_1440_60fps.mp4" type="video/mp4"> <!-- Kilde for videoen -->
+            Your browser does not support the video tag. <!-- Meldingen som vises hvis nettleseren ikke støtter video -->
+        </video>
+    </div>
+
+    <!-- Header-seksjonen inneholder logo og navigasjonsmeny -->
+    <header>
+        <div class="logo glow-text">Hubba Supply AS</div> <!-- Logo med en glødende tekststil -->
+        
+        <nav>
+            <ul>
+                <!-- Navigasjonslenker til andre sider -->
+                <li><a href="index.html" class="nav-button">Hjem</a></li>
+                <li><a href="cars.html" class="nav-button">Våre Biler</a></li>
+                <li><a href="carsell.html" class="nav-button">Vi selger bilen for deg</a></li>
+                <li><a href="contact.html" class="nav-button">Kontakt</a></li>
+            </ul>
+        </nav>
+        <button id="theme-toggle" class="theme-toggle">🌙 Dark Mode</button> <!-- En knapp for å bytte til mørk modus (ikke funksjonell enda) -->
+    </header>
+
+    <!-- Hero-seksjon med hovedbudskap -->
+    <section class="hero">
+        <h1>Finn din drømmebil hos oss</h1> <!-- Hovedoverskrift -->
+        <p>Vi tilbyr et bredt utvalg av kvalitetsbiler med tilpasset finansiering og service.</p> <!-- Kort beskrivelse -->
+        <a href="cars.html" class="cta">Se våre biler</a> <!-- Call-to-action-knapp -->
+    </section>
+
+    <!-- Seksjon om bedriften -->
+    <section id="about">
+        <h2>Om oss</h2> <!-- Overskrift -->
+        <p>Min Bedrift har spesialisert seg på bilsalg med gode vilkår og skreddersydde løsninger for våre kunder.</p>
+    </section>
+
+    <!-- Seksjon for tjenester -->
+    <section id="services">
+        <h2>Våre tjenester</h2> <!-- Overskrift -->
+        <div class="service-list">
+            <!-- Tjeneste 1 -->
+            <div class="service">
+                <h3>✨Bilfinansiering</h3>
+                <p>Fleksible betalingsløsninger tilpasset dine behov.</p>
+            </div>
+            <!-- Tjeneste 2 -->
+            <div class="service">
+                <h3>🔧Service & Garanti</h3>
+                <p>Kvalitetssikring og oppfølging av kjøretøy.</p>
+            </div>
+            <!-- Tjeneste 3 -->
+            <div class="service">
+                <h3>♻️Innbytte</h3>
+                <p>Bytt inn din gamle bil for en ny modell.</p>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Seksjon for kontakt og besøk -->
+    <section class="visit-us">
+        <h2>Ta gjerne en tur innom oss!</h2> <!-- Overskrift -->
+        <p>Din nye bil finner du hos oss!</p>
+
+        <!-- Kontaktinformasjon -->
+        <h3>Kontaktinformasjon:</h3>
+        <p><strong>Daglig Leder:</strong> <a href="mail@mail.com">Jobbmail@mail.com</a></p>
+        <p><strong>Salg:</strong> <a href="mailto:Jobbmail@mail.com">Jobbmail@mail.com</a></p>
+        <p><strong>Innkjøp:</strong> <a href="mailto:Jobbmail@mail.com">Jobbmail@mail.com</a></p>
+
+        <!-- Tilbakemelding -->
+        <h3>Gi oss en tilbakemelding!</h3>
+        <p><strong>Markedsfører-ansvarlig:</strong> <a href="Jobbmail@mail.com">Jobbmail@mail.com</a></p>
+
+        <!-- Besøksadresse -->
+        <h3>Besøk oss:</h3>
+        <p><strong>Adresse:</strong> En addresee 256 E, 4636 Kristiansand</p>
+        <p><strong>Sentralbord:</strong> <a href="tel:38360066">666 66 666</a></p>
+
+        <!-- Google Maps iframe -->
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4004003.338620561!2d4.19178485133654!3d60.65828538659659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4637f92000e1cd3d%3A0xd7f6cb73bf724e19!2sHell%20%26%20Lykke%20Iselin%20Hell%20Liadal!5e0!3m2!1sen!2sno!4v1746642135164!5m2!1sen!2sno"
+            width="100%" height="300px" style="border:0;" allowfullscreen="" loading="lazy"> <!-- Google Maps-embed -->
+        </iframe>
+    </section>
+
+    <!-- Kontakt-container -->
+    <div id="contact-container"></div>
+    <script src="contact.js"></script> <!-- Kobler til en ekstern JavaScript-fil -->
+
+    <!-- Footer-seksjonen -->
+    <footer>
+        <p>© 2025 Min Bedrift - Alle rettigheter reservert</p> <!-- Copyright-melding -->
+    </footer>
+
+</body>
+</html>
