@@ -1,13 +1,13 @@
 document.addEventListener("DOMContentLoaded", function () {
-    // Make sure the contact container exists before attempting to insert the form
+    // Find the container where the contact form will go
     const contactContainer = document.getElementById("contact-container");
     if (!contactContainer) {
         console.error("Element with ID 'contact-container' not found.");
         return;
     }
 
-    // Fetch the contact form from 'contact-form.html' and insert it dynamically
-    fetch("contact-form.html") // Ensure this file contains only the form HTML
+    // Load the contact form from a separate file
+    fetch("contact-form.html")
         .then(response => {
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
@@ -15,37 +15,38 @@ document.addEventListener("DOMContentLoaded", function () {
             return response.text();
         })
         .then(data => {
+            // Insert the form and set up its functionality
             contactContainer.innerHTML = data;
-            initializeContactForm(); // Ensure form validation works after insertion
+            initializeContactForm();
         })
         .catch(error => console.error("Error loading contact form:", error));
 });
 
-// Function to handle form validation and submission
+// Handle form submission and validation
 function initializeContactForm() {
     const contactForm = document.getElementById("contactForm");
     const formMessage = document.getElementById("formMessage");
 
     if (contactForm) {
         contactForm.addEventListener("submit", function (event) {
-            event.preventDefault(); // Prevent default form submission
+            // Prevent the form from actually submitting
+            event.preventDefault();
 
+            // Get and clean up form input values
             const name = document.getElementById("name").value.trim();
             const email = document.getElementById("email").value.trim();
             const message = document.getElementById("message").value.trim();
 
+            // Check if all fields are filled
             if (name === "" || email === "" || message === "") {
                 formMessage.innerHTML = "Alle felt må fylles ut.";
                 formMessage.style.color = "red";
                 return;
             }
 
+            // Show success message
             formMessage.innerHTML = "Takk for din melding! Vi svarer snart.";
             formMessage.style.color = "green";
-
-            // Here, you can add an AJAX request to send data to a backend if needed
         });
-    } else {
-        console.error("Contact form not found.");
     }
 }

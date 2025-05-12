@@ -1,29 +1,30 @@
-// Select the theme toggle button
-const themeToggle = document.getElementById("theme-toggle");
-
-// Check if a theme is saved in localStorage
-const currentTheme = localStorage.getItem("theme");
-
-// Apply the saved theme on page load
-if (currentTheme) {
-    document.documentElement.setAttribute("data-theme", currentTheme);
-
-    // Update the button text based on the saved theme
-    themeToggle.textContent = currentTheme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
-}
-
-// Add an event listener to toggle the theme
-themeToggle.addEventListener("click", () => {
-    // Get the current theme
-    const theme = document.documentElement.getAttribute("data-theme");
-    const newTheme = theme === "dark" ? "light" : "dark";
-
-    // Apply the new theme
-    document.documentElement.setAttribute("data-theme", newTheme);
-
-    // Save the new theme in localStorage
-    localStorage.setItem("theme", newTheme);
-
-    // Update the button text
-    themeToggle.textContent = newTheme === "dark" ? "☀️ Light Mode" : "🌙 Dark Mode";
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the theme toggle button
+    const themeToggle = document.getElementById('theme-toggle');
+    
+    // Function to set theme and update button text
+    function setTheme(theme) {
+        document.documentElement.setAttribute('data-theme', theme);
+        themeToggle.textContent = theme === 'dark' ? '☀️ Light Mode' : '🌙 Dark Mode';
+        localStorage.setItem('theme', theme);
+    }
+    
+    // Check for saved theme preference or use system preference
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        // Apply saved theme
+        setTheme(savedTheme);
+    } else {
+        // Check if user prefers dark mode at system level
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        setTheme(prefersDark ? 'dark' : 'light');
+    }
+    
+    // Toggle theme when button is clicked
+    themeToggle.addEventListener('click', () => {
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        setTheme(newTheme);
+    });
 });

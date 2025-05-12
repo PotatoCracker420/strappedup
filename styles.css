@@ -318,3 +318,114 @@ button:hover {
     background-color: var(--button-hover-background); /* Change background color on hover */
     transform: scale(1.05); /* Slightly enlarge the button on hover */
 }
+
+:root[data-theme="light"] {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #007bff;
+    --secondary-color: #6c757d;
+}
+
+:root[data-theme="dark"] {
+    --background-color: #1a1a1a;
+    --text-color: #ffffff;
+    --primary-color: #4dabf7;
+    --secondary-color: #adb5bd;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Header/Navigation */
+    header {
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+    }
+
+    .logo {
+        margin-bottom: 15px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .nav-button {
+        width: 100%;
+        display: block;
+    }
+
+    /* Hero Section */
+    .hero {
+        padding: 50px 20px;
+    }
+
+    .hero h1 {
+        font-size: 28px;
+    }
+
+    /* Services */
+    .service-list {
+        flex-direction: column;
+    }
+
+    .service {
+        max-width: 100%;
+    }
+
+    /* Forms */
+    form {
+        padding: 20px;
+        margin: 20px;
+    }
+
+    /* Video Container */
+    .video-container {
+        height: 200px;
+    }
+
+    /* Visit Us Section */
+    .visit-us {
+        margin: 20px;
+        padding: 20px;
+    }
+
+    iframe {
+        height: 250px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Further adjustments for smaller screens */
+    .hero h1 {
+        font-size: 24px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    section {
+        padding: 20px;
+        margin: 10px;
+    }
+
+    .service {
+        padding: 15px;
+    }
+
+    form {
+        margin: 10px;
+    }
+
+    input, textarea {
+        font-size: 16px; /* Prevents zoom on mobile devices */
+    }
+}
