@@ -1,0 +1,24 @@
+{
+  "name": "strappedup",
+  "version": "1.0.0",
+  "description": "Today, I began working on the website for the project. Here are the key tasks I accomplished:",
+  "homepage": "https://github.com/PotatoCracker420/strappedup#readme",
+  "bugs": {
+    "url": "https://github.com/PotatoCracker420/strappedup/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/PotatoCracker420/strappedup.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.7.0",
+    "prisma": "^6.7.0"
+  }
+}
